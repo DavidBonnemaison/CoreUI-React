@@ -1,1 +1,10 @@
 // Here you can add other styles
+
+body {
+  color: white;
+}
+
+.table .thead-light th {
+  background-color: $blue;
+  color: white;
+}

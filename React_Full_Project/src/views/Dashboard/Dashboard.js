@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Bar, Line} from 'react-chartjs-2';
+import { Bar, Line } from 'react-chartjs-2';
 import {
   Badge,
   Row,
@@ -23,6 +23,8 @@ import {
   Table
 } from 'reactstrap';
 
+import moment from 'moment';
+
 const brandPrimary = '#20a8d8';
 const brandSuccess = '#4dbd74';
 const brandInfo = '#63c2de';
@@ -39,7 +41,7 @@ const cardChartData1 = {
       borderColor: 'rgba(255,255,255,.55)',
       data: [65, 59, 84, 84, 51, 55, 40]
     }
-  ],
+  ]
 };
 
 const cardChartOpts1 = {
@@ -48,25 +50,28 @@ const cardChartOpts1 = {
     display: false
   },
   scales: {
-    xAxes: [{
-      gridLines: {
-        color: 'transparent',
-        zeroLineColor: 'transparent'
-      },
-      ticks: {
-        fontSize: 2,
-        fontColor: 'transparent',
+    xAxes: [
+      {
+        gridLines: {
+          color: 'transparent',
+          zeroLineColor: 'transparent'
+        },
+        ticks: {
+          fontSize: 2,
+          fontColor: 'transparent'
+        }
       }
-
-    }],
-    yAxes: [{
-      display: false,
-      ticks: {
+    ],
+    yAxes: [
+      {
         display: false,
-        min: Math.min.apply(Math, cardChartData1.datasets[0].data) - 5,
-        max: Math.max.apply(Math, cardChartData1.datasets[0].data) + 5,
+        ticks: {
+          display: false,
+          min: Math.min.apply(Math, cardChartData1.datasets[0].data) - 5,
+          max: Math.max.apply(Math, cardChartData1.datasets[0].data) + 5
+        }
       }
-    }],
+    ]
   },
   elements: {
     line: {
@@ -75,10 +80,10 @@ const cardChartOpts1 = {
     point: {
       radius: 4,
       hitRadius: 10,
-      hoverRadius: 4,
-    },
+      hoverRadius: 4
+    }
   }
-}
+};
 
 // Card Chart 2
 const cardChartData2 = {
@@ -90,7 +95,7 @@ const cardChartData2 = {
       borderColor: 'rgba(255,255,255,.55)',
       data: [1, 18, 9, 17, 34, 22, 11]
     }
-  ],
+  ]
 };
 
 const cardChartOpts2 = {
@@ -99,25 +104,28 @@ const cardChartOpts2 = {
     display: false
   },
   scales: {
-    xAxes: [{
-      gridLines: {
-        color: 'transparent',
-        zeroLineColor: 'transparent'
-      },
-      ticks: {
-        fontSize: 2,
-        fontColor: 'transparent',
+    xAxes: [
+      {
+        gridLines: {
+          color: 'transparent',
+          zeroLineColor: 'transparent'
+        },
+        ticks: {
+          fontSize: 2,
+          fontColor: 'transparent'
+        }
       }
-
-    }],
-    yAxes: [{
-      display: false,
-      ticks: {
+    ],
+    yAxes: [
+      {
         display: false,
-        min: Math.min.apply(Math, cardChartData2.datasets[0].data) - 5,
-        max: Math.max.apply(Math, cardChartData2.datasets[0].data) + 5,
+        ticks: {
+          display: false,
+          min: Math.min.apply(Math, cardChartData2.datasets[0].data) - 5,
+          max: Math.max.apply(Math, cardChartData2.datasets[0].data) + 5
+        }
       }
-    }],
+    ]
   },
   elements: {
     line: {
@@ -127,10 +135,10 @@ const cardChartOpts2 = {
     point: {
       radius: 4,
       hitRadius: 10,
-      hoverRadius: 4,
-    },
+      hoverRadius: 4
+    }
   }
-}
+};
 
 // Card Chart 3
 const cardChartData3 = {
@@ -142,7 +150,7 @@ const cardChartData3 = {
       borderColor: 'rgba(255,255,255,.55)',
       data: [78, 81, 80, 45, 34, 12, 40]
     }
-  ],
+  ]
 };
 
 const cardChartOpts3 = {
@@ -151,12 +159,16 @@ const cardChartOpts3 = {
     display: false
   },
   scales: {
-    xAxes: [{
-      display: false
-    }],
-    yAxes: [{
-      display: false
-    }],
+    xAxes: [
+      {
+        display: false
+      }
+    ],
+    yAxes: [
+      {
+        display: false
+      }
+    ]
   },
   elements: {
     line: {
@@ -165,10 +177,10 @@ const cardChartOpts3 = {
     point: {
       radius: 0,
       hitRadius: 10,
-      hoverRadius: 4,
-    },
+      hoverRadius: 4
+    }
   }
-}
+};
 
 // Card Chart 4
 const cardChartData4 = {
@@ -180,7 +192,7 @@ const cardChartData4 = {
       borderColor: 'transparent',
       data: [78, 81, 80, 45, 34, 12, 40, 75, 34, 89, 32, 68, 54, 72, 18, 98]
     }
-  ],
+  ]
 };
 
 const cardChartOpts4 = {
@@ -189,25 +201,29 @@ const cardChartOpts4 = {
     display: false
   },
   scales: {
-    xAxes: [{
-      display: false,
-      barPercentage: 0.6,
-    }],
-    yAxes: [{
-      display: false,
-    }]
+    xAxes: [
+      {
+        display: false,
+        barPercentage: 0.6
+      }
+    ],
+    yAxes: [
+      {
+        display: false
+      }
+    ]
   }
-}
+};
 
 // Social Box Chart
 const socialBoxData = [
-  {data: [65, 59, 84, 84, 51, 55, 40], label: 'facebook'},
-  {data: [1, 13, 9, 17, 34, 41, 38], label: 'twitter'},
-  {data: [78, 81, 80, 45, 34, 12, 40], label: 'linkedin'},
-  {data: [35, 23, 56, 22, 97, 23, 64], label: 'google'}
+  { data: [65, 59, 84, 84, 51, 55, 40], label: 'facebook' },
+  { data: [1, 13, 9, 17, 34, 41, 38], label: 'twitter' },
+  { data: [78, 81, 80, 45, 34, 12, 40], label: 'linkedin' },
+  { data: [35, 23, 56, 22, 97, 23, 64], label: 'google' }
 ];
 
-const makeSocialBoxData = (dataSetNo) => {
+const makeSocialBoxData = dataSetNo => {
   const dataset = socialBoxData[dataSetNo];
   const data = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -218,7 +234,7 @@ const makeSocialBoxData = (dataSetNo) => {
         pointHoverBackgroundColor: '#fff',
         borderWidth: 2,
         data: dataset.data,
-        label: dataset.label,
+        label: dataset.label
       }
     ]
   };
@@ -232,12 +248,16 @@ const socialChartOpts = {
     display: false
   },
   scales: {
-    xAxes: [{
-      display: false
-    }],
-    yAxes: [{
-      display: false
-    }]
+    xAxes: [
+      {
+        display: false
+      }
+    ],
+    yAxes: [
+      {
+        display: false
+      }
+    ]
   },
   elements: {
     point: {
@@ -277,6 +297,106 @@ const sparkLineChartData = [
   }
 ];
 
+const transactions = [
+  {
+    _id: '5a6893bb829f1e52ecce9428',
+    txid: '24a4330b3c50aef4a359ea886a2573f8836c03f8bb44f1d5986992e10d8e1c0c',
+    blockhash: '00000000000015f62d9b61729810675f2bd4839bdeda5f86efcdff4ad0d37477',
+    __v: 0,
+    blockindex: 115663,
+    timestamp: 1516803106,
+    total: 15000000000,
+    vout: [
+      {
+        addresses: 'AZkHJ57j34VBiYk5382aDvvyMdYMyyRvaU',
+        amount: 11137500000
+      },
+      {
+        addresses: 'Ad2pjRnB9E5JJJ992JUSKnQwLAr8zwMuhZ',
+        amount: 3750000000
+      },
+      { addresses: 'Aay4aTjv7anpwiYQns2WLfaHirXVogCf7c', amount: 112500000 }
+    ],
+    vin: [{ addresses: 'coinbase', amount: 15000000000 }]
+  },
+  {
+    _id: '5a68937e984823aceb0456a3',
+    txid: 'a68b238d06b976ec462a8ca3e74ed16922f91ad06c8fba6ae8c80d36e87d33b6',
+    blockhash: '0000000000000e8f9f3cf016d48e1ccbc3cb3438b81ae89874a0dac776670347',
+    __v: 0,
+    blockindex: 115662,
+    timestamp: 1516803037,
+    total: 15000000000,
+    vout: [
+      {
+        addresses: 'AMStsp3WbyPpdATheN11gWsgACAzDZs8GT',
+        amount: 3750000000
+      },
+      { addresses: 'AMgTxkH1Esqig22N8UWhfVUSNSSuCWe4By', amount: 11250000000 }
+    ],
+    vin: [{ addresses: 'coinbase', amount: 15000000000 }]
+  },
+  {
+    _id: '5a68937e984823aceb0456a2',
+    txid: 'b95a2e9505df7449bd3df2eb9f1d28ccc4c1ddca55ca2c97f52a5b104226c5d2',
+    blockhash: '0000000000001c24d9be65b723d799b29bf1ea873b155fa42f154ee1f784d181',
+    __v: 0,
+    blockindex: 115661,
+    timestamp: 1516803017,
+    total: 15000000000,
+    vout: [
+      {
+        addresses: 'ASwVKkwUkH5dTa7JRSeSjzbGF8ghzvXQfE',
+        amount: 11250000000
+      },
+      { addresses: 'AayfUibiMKeWdq3AhYAX6XK1eN8T57xVWJ', amount: 3750000000 }
+    ],
+    vin: [{ addresses: 'coinbase', amount: 15000000000 }]
+  },
+  {
+    _id: '5a689361e082ed59ebca9177',
+    txid: '60d02f1bbf8a0cdd1e2f7ee7fbad29c063c7b4da5fd39c3add4840ee3411a656',
+    blockhash: '00000000000016bc2275884a5ecbf2347d07a5d3e5cd0b9402ddfdff895565b2',
+    __v: 0,
+    blockindex: 115660,
+    timestamp: 1516803012,
+    total: 15000000000,
+    vout: [
+      {
+        addresses: 'AavmSFfaB7KMsgRXRwdXVNeuxRCvgtT1Yt',
+        amount: 3750000000
+      },
+      { addresses: 'AMgTxkH1Esqig22N8UWhfVUSNSSuCWe4By', amount: 11250000000 }
+    ],
+    vin: [{ addresses: 'coinbase', amount: 15000000000 }]
+  },
+  {
+    _id: '5a689361e082ed59ebca9176',
+    txid: 'ebca8d38041441e2869c92bfcee0ffc523b4fc70332f314630649e2b7ff666dd',
+    blockhash: '000000000000175f01d6eefacea981df7340f6b470e9a446dae8514ef77a9a0f',
+    __v: 0,
+    blockindex: 115659,
+    timestamp: 1516802994,
+    total: 7052359495,
+    vout: [{ addresses: 'ASDFpR3JjCxQ86u4H67zLMm8VzDz9yLQZu', amount: 7052359495 }],
+    vin: [{ addresses: 'ARUvvafjtq5KxocWANuW5qj5rn22nHpQR4', amount: 7052369495 }]
+  }
+];
+
+const buildTransactionRow = transaction => {
+  const date = moment.unix(transaction.timestamp).format('ddd,  DD MMM YYYY hh:mm UTC');
+  return (
+    <tr key={transaction._id}>
+      <td>{date}</td>
+      <td>
+        <a href="#">{transaction.txid}</a>
+      </td>
+      <td>{(transaction.vout[0].amount / 10**8).toFixed(8)}</td>
+      <td>{transaction.vout.length}</td>
+    </tr>
+  );
+};
+
 const makeSparkLineData = (dataSetNo, variant) => {
   const dataset = sparkLineChartData[dataSetNo];
   const data = {
@@ -288,7 +408,7 @@ const makeSparkLineData = (dataSetNo, variant) => {
         data: dataset.data,
         label: dataset.label
       }
-    ],
+    ]
   };
   return () => data;
 };
@@ -297,12 +417,16 @@ const sparklineChartOpts = {
   responsive: true,
   maintainAspectRatio: true,
   scales: {
-    xAxes: [{
-      display: false,
-    }],
-    yAxes: [{
-      display: false,
-    }]
+    xAxes: [
+      {
+        display: false
+      }
+    ],
+    yAxes: [
+      {
+        display: false
+      }
+    ]
   },
   elements: {
     line: {
@@ -312,7 +436,7 @@ const sparklineChartOpts = {
       radius: 0,
       hitRadius: 10,
       hoverRadius: 4,
-      hoverBorderWidth: 3,
+      hoverBorderWidth: 3
     }
   },
   legend: {
@@ -350,7 +474,36 @@ for (var i = 0; i <= elements; i++) {
 }
 
 const mainChart = {
-  labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S'],
+  labels: [
+    'M',
+    'T',
+    'W',
+    'T',
+    'F',
+    'S',
+    'S',
+    'M',
+    'T',
+    'W',
+    'T',
+    'F',
+    'S',
+    'S',
+    'M',
+    'T',
+    'W',
+    'T',
+    'F',
+    'S',
+    'S',
+    'M',
+    'T',
+    'W',
+    'T',
+    'F',
+    'S',
+    'S'
+  ],
   datasets: [
     {
       label: 'My First dataset',
@@ -378,7 +531,7 @@ const mainChart = {
       data: data3
     }
   ]
-}
+};
 
 const mainChartOpts = {
   maintainAspectRatio: false,
@@ -386,30 +539,33 @@ const mainChartOpts = {
     display: false
   },
   scales: {
-    xAxes: [{
-      gridLines: {
-        drawOnChartArea: false,
+    xAxes: [
+      {
+        gridLines: {
+          drawOnChartArea: false
+        }
       }
-    }],
-    yAxes: [{
-      ticks: {
-        beginAtZero: true,
-        maxTicksLimit: 5,
-        stepSize: Math.ceil(250 / 5),
-        max: 250
+    ],
+    yAxes: [
+      {
+        ticks: {
+          beginAtZero: true,
+          maxTicksLimit: 5,
+          stepSize: Math.ceil(250 / 5),
+          max: 250
+        }
       }
-    }]
+    ]
   },
   elements: {
     point: {
       radius: 0,
       hitRadius: 10,
       hoverRadius: 4,
-      hoverBorderWidth: 3,
+      hoverBorderWidth: 3
     }
   }
-}
-
+};
 
 class Dashboard extends Component {
   constructor(props) {
@@ -437,7 +593,6 @@ class Dashboard extends Component {
   }
 
   render() {
-
     return (
       <div className="animated fadeIn">
         <Row>
@@ -445,10 +600,15 @@ class Dashboard extends Component {
             <Card className="text-white bg-primary">
               <CardBody className="pb-0">
                 <ButtonGroup className="float-right">
-                  <ButtonDropdown id='card1' isOpen={this.state.card1}
-                                  toggle={() => { this.setState({ card1: !this.state.card1 }); }}>
+                  <ButtonDropdown
+                    id="card1"
+                    isOpen={this.state.card1}
+                    toggle={() => {
+                      this.setState({ card1: !this.state.card1 });
+                    }}
+                  >
                     <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
+                      <i className="icon-settings" />
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>Action</DropdownItem>
@@ -461,8 +621,8 @@ class Dashboard extends Component {
                 <h4 className="mb-0">9.823</h4>
                 <p>Members online</p>
               </CardBody>
-              <div className="chart-wrapper px-3" style={{height:'70px'}}>
-                <Line data={cardChartData1} options={cardChartOpts1} height={70}/>
+              <div className="chart-wrapper px-3" style={{ height: '70px' }}>
+                <Line data={cardChartData1} options={cardChartOpts1} height={70} />
               </div>
             </Card>
           </Col>
@@ -471,10 +631,15 @@ class Dashboard extends Component {
             <Card className="text-white bg-info">
               <CardBody className="pb-0">
                 <ButtonGroup className="float-right">
-                  <Dropdown id='card2' isOpen={this.state.card2}
-                            toggle={() => { this.setState({ card2: !this.state.card2 }); }}>
+                  <Dropdown
+                    id="card2"
+                    isOpen={this.state.card2}
+                    toggle={() => {
+                      this.setState({ card2: !this.state.card2 });
+                    }}
+                  >
                     <DropdownToggle className="p-0" color="transparent">
-                      <i className="icon-location-pin"></i>
+                      <i className="icon-location-pin" />
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>Action</DropdownItem>
@@ -486,8 +651,8 @@ class Dashboard extends Component {
                 <h4 className="mb-0">9.823</h4>
                 <p>Members online</p>
               </CardBody>
-              <div className="chart-wrapper px-3" style={{height:'70px'}}>
-                <Line data={cardChartData2} options={cardChartOpts2} height={70}/>
+              <div className="chart-wrapper px-3" style={{ height: '70px' }}>
+                <Line data={cardChartData2} options={cardChartOpts2} height={70} />
               </div>
             </Card>
           </Col>
@@ -496,10 +661,15 @@ class Dashboard extends Component {
             <Card className="text-white bg-warning">
               <CardBody className="pb-0">
                 <ButtonGroup className="float-right">
-                  <Dropdown id='card3' isOpen={this.state.card3}
-                            toggle={() => { this.setState({ card3: !this.state.card3 }); }}>
+                  <Dropdown
+                    id="card3"
+                    isOpen={this.state.card3}
+                    toggle={() => {
+                      this.setState({ card3: !this.state.card3 });
+                    }}
+                  >
                     <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
+                      <i className="icon-settings" />
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>Action</DropdownItem>
@@ -511,8 +681,8 @@ class Dashboard extends Component {
                 <h4 className="mb-0">9.823</h4>
                 <p>Members online</p>
               </CardBody>
-              <div className="chart-wrapper px-0" style={{height:'70px'}}>
-                <Line data={cardChartData3} options={cardChartOpts3} height={70}/>
+              <div className="chart-wrapper px-0" style={{ height: '70px' }}>
+                <Line data={cardChartData3} options={cardChartOpts3} height={70} />
               </div>
             </Card>
           </Col>
@@ -521,10 +691,15 @@ class Dashboard extends Component {
             <Card className="text-white bg-danger">
               <CardBody className="pb-0">
                 <ButtonGroup className="float-right">
-                  <ButtonDropdown id='card4' isOpen={this.state.card4}
-                                  toggle={() => { this.setState({ card4: !this.state.card4 }); }}>
+                  <ButtonDropdown
+                    id="card4"
+                    isOpen={this.state.card4}
+                    toggle={() => {
+                      this.setState({ card4: !this.state.card4 });
+                    }}
+                  >
                     <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
+                      <i className="icon-settings" />
                     </DropdownToggle>
                     <DropdownMenu right>
                       <DropdownItem>Action</DropdownItem>
@@ -536,62 +711,83 @@ class Dashboard extends Component {
                 <h4 className="mb-0">9.823</h4>
                 <p>Members online</p>
               </CardBody>
-              <div className="chart-wrapper px-3" style={{height:'70px'}}>
-                <Bar data={cardChartData4} options={cardChartOpts4} height={70}/>
+              <div className="chart-wrapper px-3" style={{ height: '70px' }}>
+                <Bar data={cardChartData4} options={cardChartOpts4} height={70} />
               </div>
             </Card>
           </Col>
         </Row>
+
         <Row>
           <Col>
-            <Card>
+            <Card className="text-white bg-gray-800">
               <CardBody>
                 <Row>
                   <Col sm="5">
-                    <CardTitle className="mb-0">Traffic</CardTitle>
-                    <div className="small text-muted">November 2015</div>
+                    <CardTitle className="mb-0">Coin Price</CardTitle>
+                    <div className="small text-muted">Past 3 months</div>
                   </Col>
                   <Col sm="7" className="d-none d-sm-inline-block">
-                    <Button color="primary" className="float-right"><i className="icon-cloud-download"></i></Button>
+                    <Button color="primary" className="float-right">
+                      <i className="icon-cloud-download" />
+                    </Button>
                     <ButtonToolbar className="float-right" aria-label="Toolbar with button groups">
                       <ButtonGroup className="mr-3" aria-label="First group">
-                        <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(1)} active={this.state.radioSelected === 1}>Day</Button>
-                        <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(2)} active={this.state.radioSelected === 2}>Month</Button>
-                        <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(3)} active={this.state.radioSelected === 3}>Year</Button>
+                        <Button
+                          color="outline-secondary"
+                          onClick={() => this.onRadioBtnClick(1)}
+                          active={this.state.radioSelected === 1}
+                        >
+                          Day
+                        </Button>
+                        <Button
+                          color="outline-secondary"
+                          onClick={() => this.onRadioBtnClick(2)}
+                          active={this.state.radioSelected === 2}
+                        >
+                          Month
+                        </Button>
+                        <Button
+                          color="outline-secondary"
+                          onClick={() => this.onRadioBtnClick(3)}
+                          active={this.state.radioSelected === 3}
+                        >
+                          Year
+                        </Button>
                       </ButtonGroup>
                     </ButtonToolbar>
                   </Col>
                 </Row>
-                <div className="chart-wrapper" style={{height: 300 + 'px', marginTop: 40 + 'px'}}>
-                  <Line data={mainChart} options={mainChartOpts} height={300}/>
+                <div className="chart-wrapper" style={{ height: 300 + 'px', marginTop: 40 + 'px' }}>
+                  <Line data={mainChart} options={mainChartOpts} height={300} />
                 </div>
               </CardBody>
-              <CardFooter>
+              <CardFooter className="text-white bg-gray-700">
                 <ul>
                   <li>
                     <div className="text-muted">Visits</div>
                     <strong>29.703 Users (40%)</strong>
-                    <Progress className="progress-xs mt-2" color="success" value="40"/>
+                    <Progress className="progress-xs mt-2" color="success" value="40" />
                   </li>
                   <li className="d-none d-md-table-cell">
                     <div className="text-muted">Unique</div>
                     <strong>24.093 Users (20%)</strong>
-                    <Progress className="progress-xs mt-2" color="info" value="20"/>
+                    <Progress className="progress-xs mt-2" color="info" value="20" />
                   </li>
                   <li>
                     <div className="text-muted">Pageviews</div>
                     <strong>78.706 Views (60%)</strong>
-                    <Progress className="progress-xs mt-2" color="warning" value="60"/>
+                    <Progress className="progress-xs mt-2" color="warning" value="60" />
                   </li>
                   <li className="d-none d-md-table-cell">
                     <div className="text-muted">New Users</div>
                     <strong>22.123 Users (80%)</strong>
-                    <Progress className="progress-xs mt-2" color="danger" value="80"/>
+                    <Progress className="progress-xs mt-2" color="danger" value="80" />
                   </li>
                   <li className="d-none d-md-table-cell">
                     <div className="text-muted">Bounce Rate</div>
                     <strong>Average 40.15%</strong>
-                    <Progress className="progress-xs mt-2" color="primary" value="40"/>
+                    <Progress className="progress-xs mt-2" color="primary" value="40" />
                   </li>
                 </ul>
               </CardFooter>
@@ -599,91 +795,22 @@ class Dashboard extends Component {
           </Col>
         </Row>
 
-        <Row>
-          <Col xs="6" sm="6" lg="3">
-            <div className="social-box facebook">
-              <i className="fa fa-facebook"></i>
-              <div className="chart-wrapper">
-                <Line data={makeSocialBoxData(0)} options={socialChartOpts} height={90}/>
-              </div>
-              <ul>
-                <li>
-                  <strong>89k</strong>
-                  <span>friends</span>
-                </li>
-                <li>
-                  <strong>459</strong>
-                  <span>feeds</span>
-                </li>
-              </ul>
-            </div>
-          </Col>
-
-          <Col xs="6" sm="6" lg="3">
-            <div className="social-box twitter">
-              <i className="fa fa-twitter"></i>
-              <div className="chart-wrapper">
-                <Line data={makeSocialBoxData(1)} options={socialChartOpts} height={90}/>
-              </div>
-              <ul>
-                <li>
-                  <strong>973k</strong>
-                  <span>followers</span>
-                </li>
-                <li>
-                  <strong>1.792</strong>
-                  <span>tweets</span>
-                </li>
-              </ul>
-            </div>
-          </Col>
-
-          <Col xs="6" sm="6" lg="3">
-
-            <div className="social-box linkedin">
-              <i className="fa fa-linkedin"></i>
-              <div className="chart-wrapper">
-                <Line data={makeSocialBoxData(2)} options={socialChartOpts} height={90}/>
-              </div>
-              <ul>
-                <li>
-                  <strong>500+</strong>
-                  <span>contacts</span>
-                </li>
-                <li>
-                  <strong>292</strong>
-                  <span>feeds</span>
-                </li>
-              </ul>
-            </div>
-          </Col>
-
-          <Col xs="6" sm="6" lg="3">
-            <div className="social-box google-plus">
-              <i className="fa fa-google-plus"></i>
-              <div className="chart-wrapper">
-                <Line data={makeSocialBoxData(3)} options={socialChartOpts} height={90}/>
-              </div>
-              <ul>
-                <li>
-                  <strong>894</strong>
-                  <span>followers</span>
-                </li>
-                <li>
-                  <strong>92</strong>
-                  <span>circles</span>
-                </li>
-              </ul>
-            </div>
-          </Col>
-        </Row>
+        <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
+          <thead className="thead-light text-white bg-gray-700">
+            <tr>
+              <th>Timestamp</th>
+              <th>TXID</th>
+              <th>Amount</th>
+              <th>Recipients</th>
+            </tr>
+          </thead>
+          <tbody>{transactions.map(buildTransactionRow)}</tbody>
+        </Table>
 
         <Row>
           <Col>
-            <Card>
-              <CardHeader>
-                Traffic {'&'} Sales
-              </CardHeader>
+            <Card className="text-white bg-gray-800">
+              <CardHeader>Traffic {'&'} Sales</CardHeader>
               <CardBody>
                 <Row>
                   <Col xs="12" md="6" xl="4">
@@ -691,93 +818,89 @@ class Dashboard extends Component {
                       <Col sm="6">
                         <div className="callout callout-info">
                           <small className="text-muted">New Clients</small>
-                          <br/>
+                          <br />
                           <strong className="h4">9,123</strong>
                           <div className="chart-wrapper">
-                            <Line data={makeSparkLineData(0, brandPrimary)} options={sparklineChartOpts} width={100} height={30}/>
+                            <Line
+                              data={makeSparkLineData(0, brandPrimary)}
+                              options={sparklineChartOpts}
+                              width={100}
+                              height={30}
+                            />
                           </div>
                         </div>
                       </Col>
                       <Col sm="6">
                         <div className="callout callout-danger">
                           <small className="text-muted">Recurring Clients</small>
-                          <br/>
+                          <br />
                           <strong className="h4">22,643</strong>
                           <div className="chart-wrapper">
-                            <Line data={makeSparkLineData(1, brandDanger)} options={sparklineChartOpts} width={100} height={30}/>
+                            <Line
+                              data={makeSparkLineData(1, brandDanger)}
+                              options={sparklineChartOpts}
+                              width={100}
+                              height={30}
+                            />
                           </div>
                         </div>
                       </Col>
                     </Row>
-                    <hr className="mt-0"/>
+                    <hr className="mt-0" />
                     <ul className="horizontal-bars">
                       <li>
-                        <div className="title">
-                          Monday
-                        </div>
+                        <div className="title">Monday</div>
                         <div className="bars">
-                          <Progress className="progress-xs" color="info" value="34"/>
-                          <Progress className="progress-xs" color="danger" value="78"/>
+                          <Progress className="progress-xs" color="info" value="34" />
+                          <Progress className="progress-xs" color="danger" value="78" />
                         </div>
                       </li>
                       <li>
-                        <div className="title">
-                          Tuesday
-                        </div>
+                        <div className="title">Tuesday</div>
                         <div className="bars">
-                          <Progress className="progress-xs" color="info" value="56"/>
-                          <Progress className="progress-xs" color="danger" value="94"/>
+                          <Progress className="progress-xs" color="info" value="56" />
+                          <Progress className="progress-xs" color="danger" value="94" />
                         </div>
                       </li>
                       <li>
-                        <div className="title">
-                          Wednesday
-                        </div>
+                        <div className="title">Wednesday</div>
                         <div className="bars">
-                          <Progress className="progress-xs" color="info" value="12"/>
-                          <Progress className="progress-xs" color="danger" value="67"/>
+                          <Progress className="progress-xs" color="info" value="12" />
+                          <Progress className="progress-xs" color="danger" value="67" />
                         </div>
                       </li>
                       <li>
-                        <div className="title">
-                          Thursday
-                        </div>
+                        <div className="title">Thursday</div>
                         <div className="bars">
-                          <Progress className="progress-xs" color="info" value="43"/>
-                          <Progress className="progress-xs" color="danger" value="91"/>
+                          <Progress className="progress-xs" color="info" value="43" />
+                          <Progress className="progress-xs" color="danger" value="91" />
                         </div>
                       </li>
                       <li>
-                        <div className="title">
-                          Friday
-                        </div>
+                        <div className="title">Friday</div>
                         <div className="bars">
-                          <Progress className="progress-xs" color="info" value="22"/>
-                          <Progress className="progress-xs" color="danger" value="73"/>
+                          <Progress className="progress-xs" color="info" value="22" />
+                          <Progress className="progress-xs" color="danger" value="73" />
                         </div>
                       </li>
                       <li>
-                        <div className="title">
-                          Saturday
-                        </div>
+                        <div className="title">Saturday</div>
                         <div className="bars">
-                          <Progress className="progress-xs" color="info" value="53"/>
-                          <Progress className="progress-xs" color="danger" value="82"/>
+                          <Progress className="progress-xs" color="info" value="53" />
+                          <Progress className="progress-xs" color="danger" value="82" />
                         </div>
                       </li>
                       <li>
-                        <div className="title">
-                          Sunday
-                        </div>
+                        <div className="title">Sunday</div>
                         <div className="bars">
-                          <Progress className="progress-xs" color="info" value="9"/>
-                          <Progress className="progress-xs" color="danger" value="69"/>
+                          <Progress className="progress-xs" color="info" value="9" />
+                          <Progress className="progress-xs" color="danger" value="69" />
                         </div>
                       </li>
                       <li className="legend">
-                        <Badge pill color="info"></Badge>
+                        <Badge pill color="info" />
                         <small>New clients</small>
-                        &nbsp; <Badge pill color="danger"></Badge>
+                        &nbsp; <Badge pill color="danger" />
                         <small>Recurring clients</small>
                       </li>
                     </ul>
@@ -787,78 +910,105 @@ class Dashboard extends Component {
                       <Col sm="6">
                         <div className="callout callout-warning">
                           <small className="text-muted">Pageviews</small>
-                          <br/>
+                          <br />
                           <strong className="h4">78,623</strong>
                           <div className="chart-wrapper">
-                            <Line data={makeSparkLineData(2, brandWarning)} options={sparklineChartOpts} width={100} height={30}/>
+                            <Line
+                              data={makeSparkLineData(2, brandWarning)}
+                              options={sparklineChartOpts}
+                              width={100}
+                              height={30}
+                            />
                           </div>
                         </div>
                       </Col>
                       <Col sm="6">
                         <div className="callout callout-success">
                           <small className="text-muted">Organic</small>
-                          <br/>
+                          <br />
                           <strong className="h4">49,123</strong>
                           <div className="chart-wrapper">
-                            <Line data={makeSparkLineData(3, brandSuccess)} options={sparklineChartOpts} width={100} height={30}/>
+                            <Line
+                              data={makeSparkLineData(3, brandSuccess)}
+                              options={sparklineChartOpts}
+                              width={100}
+                              height={30}
+                            />
                           </div>
                         </div>
                       </Col>
                     </Row>
-                    <hr className="mt-0"/>
+                    <hr className="mt-0" />
                     <ul className="horizontal-bars type-2">
                       <li>
-                        <i className="icon-user"></i>
+                        <i className="icon-user" />
                         <span className="title">Male</span>
                         <span className="value">43%</span>
                         <div className="bars">
-                          <Progress className="progress-xs" color="warning" value="43"/>
+                          <Progress className="progress-xs" color="warning" value="43" />
                         </div>
                       </li>
                       <li>
-                        <i className="icon-user-female"></i>
+                        <i className="icon-user-female" />
                         <span className="title">Female</span>
                         <span className="value">37%</span>
                         <div className="bars">
-                          <Progress className="progress-xs" color="warning" value="37"/>
+                          <Progress className="progress-xs" color="warning" value="37" />
                         </div>
                       </li>
-                      <li className="divider"></li>
+                      <li className="divider" />
                       <li>
-                        <i className="icon-globe"></i>
+                        <i className="icon-globe" />
                         <span className="title">Organic Search</span>
-                        <span className="value">191,235 <span className="text-muted small">(56%)</span></span>
+                        <span className="value">
+                          191,235 <span className="text-muted small">(56%)</span>
+                        </span>
                         <div className="bars">
-                          <Progress className="progress-xs" color="success" value="56"/>
+                          <Progress className="progress-xs" color="success" value="56" />
                         </div>
                       </li>
                       <li>
-                        <i className="icon-social-facebook"></i>
+                        <i className="icon-social-facebook" />
                         <span className="title">Facebook</span>
-                        <span className="value">51,223 <span className="text-muted small">(15%)</span></span>
+                        <span className="value">
+                          51,223 <span className="text-muted small">(15%)</span>
+                        </span>
                         <div className="bars">
-                          <Progress className="progress-xs" color="success" value="15"/>
+                          <Progress className="progress-xs" color="success" value="15" />
                         </div>
                       </li>
                       <li>
-                        <i className="icon-social-twitter"></i>
+                        <i className="icon-social-twitter" />
                         <span className="title">Twitter</span>
-                        <span className="value">37,564 <span className="text-muted small">(11%)</span></span>
+                        <span className="value">
+                          37,564 <span className="text-muted small">(11%)</span>
+                        </span>
                         <div className="bars">
-                          <Progress className="progress-xs" color="success" value="11"/>
+                          <Progress className="progress-xs" color="success" value="11" />
                         </div>
                       </li>
                       <li>
-                        <i className="icon-social-linkedin"></i>
+                        <i className="icon-social-linkedin" />
                         <span className="title">LinkedIn</span>
-                        <span className="value">27,319 <span className="text-muted small">(8%)</span></span>
+                        <span className="value">
+                          27,319 <span className="text-muted small">(8%)</span>
+                        </span>
                         <div className="bars">
-                          <Progress className="progress-xs" color="success" value="8"/>
+                          <Progress className="progress-xs" color="success" value="8" />
                         </div>
                       </li>
                       <li className="divider text-center">
-                        <Button color="link" size="sm" className="text-muted" data-toggle="tooltip" data-placement="top"
-                                title="" data-original-title="show more"><i className="icon-options"></i></Button>
+                        <Button
+                          color="link"
+                          size="sm"
+                          className="text-muted"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title=""
+                          data-original-title="show more"
+                        >
+                          <i className="icon-options" />
+                        </Button>
                       </li>
                     </ul>
                   </Col>
@@ -867,28 +1017,38 @@ class Dashboard extends Component {
                       <Col sm="6">
                         <div className="callout">
                           <small className="text-muted">CTR</small>
-                          <br/>
+                          <br />
                           <strong className="h4">23%</strong>
                           <div className="chart-wrapper">
-                            <Line data={makeSparkLineData(4)} options={sparklineChartOpts} width={100} height={30}/>
+                            <Line
+                              data={makeSparkLineData(4)}
+                              options={sparklineChartOpts}
+                              width={100}
+                              height={30}
+                            />
                           </div>
                         </div>
                       </Col>
                       <Col sm="6">
                         <div className="callout callout-primary">
                           <small className="text-muted">Bounce Rate</small>
-                          <br/>
+                          <br />
                           <strong className="h4">5%</strong>
                           <div className="chart-wrapper">
-                            <Line data={makeSparkLineData(5, brandPrimary)} options={sparklineChartOpts} width={100} height={30}/>
+                            <Line
+                              data={makeSparkLineData(5, brandPrimary)}
+                              options={sparklineChartOpts}
+                              width={100}
+                              height={30}
+                            />
                           </div>
                         </div>
                       </Col>
                     </Row>
-                    <hr className="mt-0"/>
+                    <hr className="mt-0" />
                     <ul className="icons-list">
                       <li>
-                        <i className="icon-screen-desktop bg-primary"></i>
+                        <i className="icon-screen-desktop bg-primary" />
                         <div className="desc">
                           <div className="title">iMac 4k</div>
                           <small>Lorem ipsum dolor sit amet</small>
@@ -898,11 +1058,13 @@ class Dashboard extends Component {
                           <strong>1.924</strong>
                         </div>
                         <div className="actions">
-                          <Button color="link" className="text-muted"><i className="icon-settings"></i></Button>
+                          <Button color="link" className="text-muted">
+                            <i className="icon-settings" />
+                          </Button>
                         </div>
                       </li>
                       <li>
-                        <i className="icon-screen-smartphone bg-info"></i>
+                        <i className="icon-screen-smartphone bg-info" />
                         <div className="desc">
                           <div className="title">Samsung Galaxy Edge</div>
                           <small>Lorem ipsum dolor sit amet</small>
@@ -912,11 +1074,13 @@ class Dashboard extends Component {
                           <strong>1.224</strong>
                         </div>
                         <div className="actions">
-                          <Button color="link" className="text-muted"><i className="icon-settings"></i></Button>
+                          <Button color="link" className="text-muted">
+                            <i className="icon-settings" />
+                          </Button>
                         </div>
                       </li>
                       <li>
-                        <i className="icon-screen-smartphone bg-warning"></i>
+                        <i className="icon-screen-smartphone bg-warning" />
                         <div className="desc">
                           <div className="title">iPhone 6S</div>
                           <small>Lorem ipsum dolor sit amet</small>
@@ -926,11 +1090,13 @@ class Dashboard extends Component {
                           <strong>1.163</strong>
                         </div>
                         <div className="actions">
-                          <Button color="link" className="text-muted"><i className="icon-settings"></i></Button>
+                          <Button color="link" className="text-muted">
+                            <i className="icon-settings" />
+                          </Button>
                         </div>
                       </li>
                       <li>
-                        <i className="icon-user bg-danger"></i>
+                        <i className="icon-user bg-danger" />
                         <div className="desc">
                           <div className="title">Premium accounts</div>
                           <small>Lorem ipsum dolor sit amet</small>
@@ -940,11 +1106,13 @@ class Dashboard extends Component {
                           <strong>928</strong>
                         </div>
                         <div className="actions">
-                          <Button color="link" className="text-muted"><i className="icon-settings"></i></Button>
+                          <Button color="link" className="text-muted">
+                            <i className="icon-settings" />
+                          </Button>
                         </div>
                       </li>
                       <li>
-                        <i className="icon-social-spotify bg-success"></i>
+                        <i className="icon-social-spotify bg-success" />
                         <div className="desc">
                           <div className="title">Spotify Subscriptions</div>
                           <small>Lorem ipsum dolor sit amet</small>
@@ -954,11 +1122,13 @@ class Dashboard extends Component {
                           <strong>893</strong>
                         </div>
                         <div className="actions">
-                          <Button color="link" className="text-muted"><i className="icon-settings"></i></Button>
+                          <Button color="link" className="text-muted">
+                            <i className="icon-settings" />
+                          </Button>
                         </div>
                       </li>
                       <li>
-                        <i className="icon-cloud-download bg-danger"></i>
+                        <i className="icon-cloud-download bg-danger" />
                         <div className="desc">
                           <div className="title">Ebook</div>
                           <small>Lorem ipsum dolor sit amet</small>
@@ -968,11 +1138,13 @@ class Dashboard extends Component {
                           <strong>121.924</strong>
                         </div>
                         <div className="actions">
-                          <Button color="link" className="text-muted"><i className="icon-settings"></i></Button>
+                          <Button color="link" className="text-muted">
+                            <i className="icon-settings" />
+                          </Button>
                         </div>
                       </li>
                       <li>
-                        <i className="icon-camera bg-warning"></i>
+                        <i className="icon-camera bg-warning" />
                         <div className="desc">
                           <div className="title">Photos</div>
                           <small>Lorem ipsum dolor sit amet</small>
@@ -982,248 +1154,32 @@ class Dashboard extends Component {
                           <strong>12.125</strong>
                         </div>
                         <div className="actions">
-                          <Button color="link" className="text-muted"><i className="icon-settings"></i></Button>
+                          <Button color="link" className="text-muted">
+                            <i className="icon-settings" />
+                          </Button>
                         </div>
                       </li>
                       <li className="divider text-center">
-                        <Button color="link" size="sm" className="text-muted" data-toggle="tooltip" data-placement="top"
-                                title="show more"><i className="icon-options"></i></Button>
+                        <Button
+                          color="link"
+                          size="sm"
+                          className="text-muted"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="show more"
+                        >
+                          <i className="icon-options" />
+                        </Button>
                       </li>
                     </ul>
                   </Col>
                 </Row>
-                <br/>
-                <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
-                  <thead className="thead-light">
-                  <tr>
-                    <th className="text-center"><i className="icon-people"></i></th>
-                    <th>User</th>
-                    <th className="text-center">Country</th>
-                    <th>Usage</th>
-                    <th className="text-center">Payment Method</th>
-                    <th>Activity</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'img/avatars/1.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com"/>
-                        <span className="avatar-status badge-success"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Yiorgos Avraamu</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-us h4 mb-0" title="us" id="us"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>50%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                      <Progress className="progress-xs" color="success" value="50"/>
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-cc-mastercard" style={{fontSize: 24 + 'px'}}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>10 sec ago</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'img/avatars/2.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com"/>
-                        <span className="avatar-status badge-danger"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Avram Tarasios</div>
-                      <div className="small text-muted">
-
-                        <span>Recurring</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-br h4 mb-0" title="br" id="br"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>10%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                      <Progress className="progress-xs" color="info" value="10"/>
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-cc-visa" style={{fontSize: 24 + 'px'}}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>5 minutes ago</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'img/avatars/3.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com"/>
-                        <span className="avatar-status badge-warning"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Quintin Ed</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-in h4 mb-0" title="in" id="in"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>74%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                      <Progress className="progress-xs" color="warning" value="74"/>
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-cc-stripe" style={{fontSize: 24 + 'px'}}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>1 hour ago</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'img/avatars/4.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com"/>
-                        <span className="avatar-status badge-secondary"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Enéas Kwadwo</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-fr h4 mb-0" title="fr" id="fr"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>98%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                      <Progress className="progress-xs" color="danger" value="98"/>
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-paypal" style={{fontSize: 24 + 'px'}}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>Last month</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'img/avatars/5.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com"/>
-                        <span className="avatar-status badge-success"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Agapetus Tadeáš</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-es h4 mb-0" title="es" id="es"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>22%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                      <Progress className="progress-xs" color="info" value="22"/>
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-google-wallet" style={{fontSize: 24 + 'px'}}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>Last week</strong>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="text-center">
-                      <div className="avatar">
-                        <img src={'img/avatars/6.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com"/>
-                        <span className="avatar-status badge-danger"></span>
-                      </div>
-                    </td>
-                    <td>
-                      <div>Friderik Dávid</div>
-                      <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      <i className="flag-icon flag-icon-pl h4 mb-0" title="pl" id="pl"></i>
-                    </td>
-                    <td>
-                      <div className="clearfix">
-                        <div className="float-left">
-                          <strong>43%</strong>
-                        </div>
-                        <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                        </div>
-                      </div>
-                      <Progress className="progress-xs" color="success" value="43"/>
-                    </td>
-                    <td className="text-center">
-                      <i className="fa fa-cc-amex" style={{fontSize: 24 + 'px'}}></i>
-                    </td>
-                    <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>Yesterday</strong>
-                    </td>
-                  </tr>
-                  </tbody>
-                </Table>
               </CardBody>
             </Card>
           </Col>
         </Row>
       </div>
-    )
+    );
   }
 }
 
